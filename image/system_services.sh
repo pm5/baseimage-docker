@@ -50,6 +50,10 @@ chmod 644 /etc/insecure_key*
 chown root:root /etc/insecure_key*
 cp /build/bin/enable_insecure_key /usr/sbin/
 
+## Install my SSH key for root and app
+cp /build/my_key.pub /root/.ssh/authorized_keys
+chown root:root /root/.ssh/*
+
 ## Install cron daemon.
 $minimal_apt_get_install cron
 mkdir /etc/service/cron
